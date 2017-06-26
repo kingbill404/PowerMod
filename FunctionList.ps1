@@ -1,5 +1,10 @@
+<#
+        This is list of functions both useful and not for Windows
+#>
+
+
 #colors console green and black
-function Color-Console 
+function KingBil-Console 
 {
   $host.ui.rawui.backgroundcolor = "black"
   $host.ui.rawui.foregroundcolor = "green"
@@ -8,10 +13,11 @@ function Color-Console
     clear-host
 }
 Color-console
-write-host `t `n "y-------Console Colors Loaded Sucessfully-------" `n
-           
-##loads Custom Settings and Perameters
-function set-advancedperameters	
+write-host `t `n "y-------KingBills console Loaded Sucessfully-------" `n
+
+##       
+##loads a rediculous ammount of advanced Custom Settings and Perameters
+function set-advancedperameters	#Default Parameter set = 'Parameter Set 1' (Param1)
 {
 	[cmdletbinding(
 		DefaultParameterSetName='Parameter Set 1',
@@ -21,7 +27,7 @@ function set-advancedperameters
 		ConfirmImpact='Medium')]
 	  [Alias()]
 	  [OutputType([String])]
-  #Parameter set 1 Param1
+  #Parameter set 1 (Param1)
   param ( 
 		[parameter(mandatory=$true,
 			ValueFromPipeline=$true,
@@ -38,15 +44,15 @@ function set-advancedperameters
 		[alias("p1")]
 		$Param1,
 
-  #Parameter Set 2 Param2
+  #Parameter Set 2 ('Param2') 
   [Parameter(ParameterSetName='Parameter Set 2')]
-    [AllowNull()]
-    [AllowEmptyCollection()]
-    [AllowEmptyString()]
-    [ValidateScript({$true})]
-    [ValidateRange(0,5)]
-    [int]$
-		$Param2,
+        [AllowNull()]
+        [AllowEmptyCollection()]
+        [AllowEmptyString()]
+        [ValidateScript({$true})]
+        [ValidateRange(0,5)]
+        [int]$
+        $Param2,
 		
   #Parameter Set 3 Param3
   [Parameter(ParameterSetName='Parameter Set 3')]
